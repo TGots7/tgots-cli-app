@@ -13,7 +13,9 @@ class Tgots::CLI
 		while input != "exit"
 			input = gets.strip.downcase
 			x = Tgots::Zipcode.new(input)
+			
 			y = Tgots::Scraper.new
+			
 			days = y.scrape_five_day(x.url)
 			binding.pry
 		end

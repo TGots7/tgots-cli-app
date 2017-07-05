@@ -1,6 +1,6 @@
 require 'pry'
 
-class Day
+class Tgots::Day
 
  attr_accessor :day, :location, :date, :weather, :high, :rain_chance
  @@all = []

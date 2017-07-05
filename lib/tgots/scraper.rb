@@ -3,15 +3,15 @@ require 'Nokogiri'
 require 'pry'
 
 
-class Scraper
+class Tgots::Scraper
 
-	def scrape_five_day(url)#enter zipcode url
+def scrape_five_day(url)#enter zipcode url
 		#scrape info and call day object to create days each loop
-		counter = 1
-		html = open(url)
-		weather_page = Nokogiri::HTML(html)
+	counter = 1
+	html = open(url)
+	weather_page = Nokogiri::HTML(html)
 
-		#unless counter == 6
+	unless counter == 6
 
 		location = weather_page.css('#APP div div.fiveday.section-local-suite.page div.section-page-name div.hero.hero-background.layout-centered div.region.region-hero-top div.locations-title.five-day-page-title h1').text
 		#twc-scrollabe table tbody
@@ -25,6 +25,11 @@ class Scraper
 		weather = weather_page.css(weather_i).text
 		high = weather_page.css(high_i).text
 		rain_chance = weather_page.css(rain_chance_i).text
+
+		weekday = Tgots::Day.new(day, location, date, weather, high, rain_chance)
+
+		counter += 1
+	end
 
 		# tom_name = weather_page.css('tr:nth-child(2) td:nth-child(2) div div span').text
 		# tom_date = weather_page.css('tr:nth-child(2) td:nth-child(2) div span').text
@@ -55,6 +60,6 @@ class Scraper
 	end
 
 end
-url = "https://weather.com/weather/5day/l/14213:4:US"
-x = Scraper.new
-puts x.scrape_five_day(url)
+# url = "https://weather.com/weather/5day/l/14213:4:US"
+# x = Scraper.new
+# puts x.scrape_five_day(url)
