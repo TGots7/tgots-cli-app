@@ -2,35 +2,25 @@
 class Tgots::CLI
 
 	def call
-		puts "Today best tgots"
-		list_people
+		puts "Get the weather forecast from a Zipcode"
 		menu
 		goodbye
 	end
 
-	def list_people
-		puts "List of People"
-		@all = Tgots::People.today_people
-	end
-
 	def menu
-		puts "Enter the number of the deal you would like more info on:"
+		puts "Please enter a Zipcode to get is weather or if done type exit:"
 		input = nil
 		while input != "exit"
 			input = gets.strip.downcase
-			case input
-			when "1"
-				puts "more info"
-				puts "Chose another list number for info or type exit to leave"
-			when "2"
-				puts "more info"
-				puts "Chose another list number for info or type exit to leave"
-			end
+			x = Tgots::Zipcode.new(input)
+			y = Tgots::Scraper.new
+			days = y.scrape_five_day(x.url)
+			binding.pry
 		end
 	end
 
 	def goodbye
-		puts "See you tomorrow for more deals!!!"
+		puts "Come back later for a weather forecast update!!"
 	end
 
 

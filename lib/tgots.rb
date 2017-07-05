@@ -4,7 +4,8 @@ require 'Nokogiri'
 require 'pry'
 
 require_relative "./tgots/version"
-require_relative "./tgots/people"
+require_relative "./tgots/scraper"
+require_relative "./tgots/zipcode"
 require_relative "./tgots/cli"
 
 
@@ -14,3 +15,4 @@ require_relative "./tgots/cli"
 
 
 ###  These comments are for github verification ###
+
