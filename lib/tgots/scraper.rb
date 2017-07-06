@@ -12,7 +12,7 @@ class Tgots::Scraper
 	weather_page = Nokogiri::HTML(html)
 
 	until counter == 6
-	 	
+ 	
 		location = weather_page.css('#APP div div.fiveday.section-local-suite.page div.section-page-name div.hero.hero-background.layout-centered div.region.region-hero-top div.locations-title.five-day-page-title h1').text
 		#twc-scrollabe table tbody
 		day_i= "tr:nth-child(" + "#{counter}" + ") td:nth-child(2) div div span"
