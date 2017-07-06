@@ -16,12 +16,11 @@ class Tgots::CLI
 		input = gets.strip.downcase
 		if input == "exit"
 			goodbye
+			exit
 		end
 		zip = Tgots::Zipcode.new(input)
 		w = Tgots::Scraper.new
 		w.scrape_five_day(zip.url)
-			#Tgots::Day.all
-			
 	end
 
 	def display_5
@@ -32,26 +31,24 @@ class Tgots::CLI
 			puts "#{i + 1}. #{days[i].day} #{days[i].high}"
 			i += 1
 		end
-
-		# puts "1. #{days[0].day} #{days[0].high}"
-		# puts "2. #{days[1].day} #{days[1].high}"
-		# puts "3. #{days[2].day} #{days[2].high}"
-		# puts "4. #{days[3].day} #{days[3].high}"
-		# puts "5. #{days[4].day} #{days[4].high}"
 	end
 
 	def deeper
-		puts "If you would like more weather information for a day, enter the index number for that day, or exit to leave:"
+		days = Tgots::Day.all
+		puts "For more detailed weather info enter the number for that day, or enter 'exit' to leave:"
 		input = gets.strip
 		
-
-
+			num = input.to_i - 1
+			puts "#{days[num].location} #{days[num].date}"
+			puts "High: #{days[num].high}"
+			puts "Weather: #{days[num].weather}"
+			puts "Chance of rain: #{days[num].rain_chance}"
+			puts "Humidity: #{days[num].humidity}"
+			puts "Wind: #{days[num].wind}"
 	end
 
 	def goodbye
 		puts "Come back later for a weather forecast update!!"
 	end
-
-
 
 end
