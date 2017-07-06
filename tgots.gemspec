@@ -1,11 +1,11 @@
 # coding: utf-8
 lib = File.expand_path("../lib", __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require "awesomeapp/version"
+require "tgots-cli-app/version"
 
 Gem::Specification.new do |spec|
-  spec.name          = "awesomeapp"
-  spec.version       = Awesomeapp::VERSION
+  spec.name          = "tgots-cli-app"
+  spec.version       = tgots-cli-app::VERSION
   spec.authors       = ["TGots7"]
   spec.email         = ["tylergotto17@gmail.com"]
 

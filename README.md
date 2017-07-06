@@ -1,15 +1,13 @@
-# Awesomeapp
+# tgots-cli-app
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/awesomeapp`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+Welcome to tgots-cli-app, this cli app is used to quickly get the 5 day weather forecast for any zipcode in the USA. At startup the user will be requested to enter a USA zipcode which they desire to see the weather for, the will the be presented with the 5 day high temperature weather forecast for that zipcode, if the user then wishes they can chose a day of the forecast to see a more indepth view.
 
 ## Installation
 
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'awesomeapp'
+gem 'tgots-cli-app'
 ```
 
 And then execute:
@@ -18,11 +16,11 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install awesomeapp
+    $ gem install tgots-cli-app
 
 ## Usage
 
-TODO: Write usage instructions here
+Welcome to tgots-cli-app, this cli app is used to quickly get the 5 day weather forecast for any zipcode in the USA. At startup the user will be requested to enter a USA zipcode which they desire to see the weather for, the will the be presented with the 5 day high temperature weather forecast for that zipcode, if the user then wishes they can chose a day of the forecast to see a more indepth view.
 
 ## Development
 
@@ -32,8 +30,8 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/awesomeapp. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/tgots-cli-app. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
 
 ## Code of Conduct
 
-Everyone interacting in the Awesomeapp project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/[USERNAME]/awesomeapp/blob/master/CODE_OF_CONDUCT.md).
+Everyone interacting in the Awesomeapp project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/[USERNAME]/tgots-cli-app/blob/master/CODE_OF_CONDUCT.md).
