@@ -19,7 +19,4 @@ class Tgots::Day
  	@@all
  end
 
-
-
-
 end
