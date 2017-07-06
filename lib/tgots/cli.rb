@@ -2,7 +2,9 @@
 class Tgots::CLI
 
 	def call
-		puts "Get the weather forecast from a Zipcode"
+		puts "\n\n\t***********************************************\n"
+		puts "\t*\s\s\s\s\s\s\sWelcome to Weather via Zipcode\s\s\s\s\s\s\s\s*\n"
+		puts "\t***********************************************"
 		zipcode
 		display_5
 		deeper
@@ -11,7 +13,7 @@ class Tgots::CLI
 
 	def zipcode
 		#ask for zipcode for area, then scrape weather days
-		puts "Please enter a Zipcode to get it's weather or if done type exit:"
+		puts "\nEnter a Zipcode to view it's 5 day weather forecast or 'exit':"
 		input = nil
 		input = gets.strip.downcase
 		if input == "exit"
@@ -25,30 +27,30 @@ class Tgots::CLI
 
 	def display_5
 		days = Tgots::Day.all
-		puts "#{days[0].location}"
+		puts "\t#{days[0].location}"
 		i = 0
 		while i < 5 do
-			puts "#{i + 1}. #{days[i].day} #{days[i].high}"
+			puts "\t#{i + 1}. #{days[i].day} #{days[i].high}"
 			i += 1
 		end
 	end
 
 	def deeper
 		days = Tgots::Day.all
-		puts "For more detailed weather info enter the number for that day, or enter 'exit' to leave:"
+		puts "\nFor more detailed weather enter the number for the day, or 'exit' to leave:"
 		input = gets.strip
 		
 			num = input.to_i - 1
-			puts "#{days[num].location} #{days[num].date}"
-			puts "High: #{days[num].high}"
-			puts "Weather: #{days[num].weather}"
-			puts "Chance of rain: #{days[num].rain_chance}"
-			puts "Humidity: #{days[num].humidity}"
-			puts "Wind: #{days[num].wind}"
+			puts "\t#{days[num].location} #{days[num].date}"
+			puts "\tHigh: #{days[num].high}"
+			puts "\tWeather: #{days[num].weather}"
+			puts "\tChance of rain: #{days[num].rain_chance}"
+			puts "\tHumidity: #{days[num].humidity}"
+			puts "\tWind: #{days[num].wind}"
 	end
 
 	def goodbye
-		puts "Come back later for a weather forecast update!!"
+		puts "\nCome back later for a weather forecast update!!\n"
 	end
 
 end
