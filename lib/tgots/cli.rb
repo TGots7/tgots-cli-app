@@ -8,7 +8,6 @@ class Tgots::CLI
 		zipcode
 		display_5
 		deeper
-		goodbye
 	end
 
 	def zipcode
@@ -39,7 +38,10 @@ class Tgots::CLI
 		days = Tgots::Day.all
 		puts "\nFor more detailed weather enter the number for the day, or 'exit' to leave:"
 		input = gets.strip
-		if input == 0..5
+		if input == "exit"
+			goodbye
+			return nil
+		end
 			num = input.to_i - 1
 			puts "\t#{days[num].location} #{days[num].date}"
 			puts "\tHigh: #{days[num].high}"
@@ -47,9 +49,16 @@ class Tgots::CLI
 			puts "\tChance of rain: #{days[num].rain_chance}"
 			puts "\tHumidity: #{days[num].humidity}"
 			puts "\tWind: #{days[num].wind}"
-		else
-			return nil
-		end
+
+		puts "\nIf you would like to see another day enter: Y or enter: 'exit':"
+			answer = gets.strip
+			if answer == "Y" || answer == "y"
+				display_5
+				deeper
+			else
+				goodbye
+				return nil
+			end
 	end
 
 	def goodbye
